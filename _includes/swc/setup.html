@@ -14,7 +14,9 @@
   </ul>
 </div>
 
+{% if site.flavor != "unix" %}
 {% include install_instructions/git.html %}
+{% endif %}
 
 {% if site.flavor == "r" %}
 {% include install_instructions/r.html %}
@@ -23,6 +25,7 @@
 {% elsif site.flavor == "FIXME" %}
 {% include install_instructions/r.html %}
 {% include install_instructions/python.html %}
+{% elsif site.flavor == "unix" %}
 {% else %}
 {% include warning-flavor.html %}
 {% endif %}
